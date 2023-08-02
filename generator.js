@@ -1,5 +1,5 @@
 const wordsGroup1 = ['Did you know that', 'Can you belive that'];
-const SecondWordsGroup1 = [
+const secondWordsGroup1 = [
     'Scotland chose the unicorn as its national animal.', 
     'Avocados are not vegetables.',
     "Shrimp's heart is in its head.",
@@ -32,5 +32,27 @@ const secondWordsGroup2 = [
     'belong to us!' //only together with the last from wordsGroup2
 ];
 
-console.log(wordsGroup1);
+const chooseGroup = () => { //create a random number between 0-1 to see which group to choose
+    let randomNumber = Math.floor(Math.random() * 2);
+    return randomNumber
+};
+
+let randomSentence1 = [];
+const randomForGroup1 = () => { //random generator for the wordsGroup1
+    let randomNumber = Math.floor(Math.random() * wordsGroup1.length);
+    let randomWord1 = wordsGroup1[randomNumber];
+    let randomNumber2 = Math.floor(Math.random() * secondWordsGroup1.length);
+    let randomWord2 = secondWordsGroup1[randomNumber2];
+    randomSentence1.push(randomWord1, randomWord2);
+    return randomSentence1
+};
+
+const createText = () => {
+    console.log(`${randomForGroup1()}`);
+};
+
+createText();
+
+//console.log(wordsGroup1);
+//console.log(randomForGroup1());
 
